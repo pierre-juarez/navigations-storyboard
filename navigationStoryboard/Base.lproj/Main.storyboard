@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr9-0O-4jm">
-                                <rect key="frame" x="162" y="405" width="67" height="35"/>
+                                <rect key="frame" x="136" y="405" width="121" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Menu"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send param!"/>
                                 <connections>
-                                    <segue destination="htl-fb-wiN" kind="show" id="dvn-Ej-KdN"/>
+                                    <segue destination="htl-fb-wiN" kind="show" identifier="DetailViewController" id="dvn-Ej-KdN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,17 +41,32 @@
             </objects>
             <point key="canvasLocation" x="909.23076923076917" y="-28.436018957345969"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="lUN-ej-Ft0">
             <objects>
-                <viewController id="htl-fb-wiN" sceneMemberID="viewController">
+                <viewController id="htl-fb-wiN" customClass="DetailViewController" customModule="navigationStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zL0-KD-iNJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKh-Gj-ihh">
+                                <rect key="frame" x="195" y="422" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="csj-50-gTQ"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="pKh-Gj-ihh" firstAttribute="centerX" secondItem="zL0-KD-iNJ" secondAttribute="centerX" id="8Nq-EU-Yfp"/>
+                            <constraint firstItem="pKh-Gj-ihh" firstAttribute="centerY" secondItem="zL0-KD-iNJ" secondAttribute="centerY" id="Ki6-3s-72L"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5zO-Yi-5v6"/>
+                    <connections>
+                        <outlet property="lblText" destination="pKh-Gj-ihh" id="NxR-bw-Mf2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKi-bK-Jnz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
