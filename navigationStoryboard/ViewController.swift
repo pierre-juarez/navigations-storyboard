@@ -22,6 +22,10 @@ class ViewController: UIViewController {
             controller?.saludo = msg
         }
     }
+    
+    @IBAction func backToHomeView(segue: UIStoryboardSegue){
+        print("Back to home...")
+    }
 
 
 }

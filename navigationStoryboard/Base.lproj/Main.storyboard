@@ -30,18 +30,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mi first screen" id="wDj-9Q-vzK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="r7Z-RM-APA">
-                            <connections>
-                                <segue destination="xlQ-OP-ilh" kind="show" id="EcU-s9-N0i"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="r7Z-RM-APA"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="909.23076923076917" y="-28.436018957345969"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Second view-->
         <scene sceneID="lUN-ej-Ft0">
             <objects>
                 <viewController id="htl-fb-wiN" customClass="DetailViewController" customModule="navigationStoryboard" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,15 +51,34 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFG-Qn-Q5t">
+                                <rect key="frame" x="148" y="554" width="94" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Volver">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="back:" destination="htl-fb-wiN" eventType="touchUpInside" id="ZNL-h4-wjt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="csj-50-gTQ"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="pKh-Gj-ihh" firstAttribute="centerX" secondItem="zL0-KD-iNJ" secondAttribute="centerX" id="8Nq-EU-Yfp"/>
                             <constraint firstItem="pKh-Gj-ihh" firstAttribute="centerY" secondItem="zL0-KD-iNJ" secondAttribute="centerY" id="Ki6-3s-72L"/>
+                            <constraint firstItem="csj-50-gTQ" firstAttribute="bottom" secondItem="TFG-Qn-Q5t" secondAttribute="bottom" constant="212" id="LqF-ww-nuf"/>
+                            <constraint firstItem="TFG-Qn-Q5t" firstAttribute="centerX" secondItem="zL0-KD-iNJ" secondAttribute="centerX" id="jDC-7i-qVX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5zO-Yi-5v6"/>
+                    <navigationItem key="navigationItem" title="Second view" id="5zO-Yi-5v6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ytT-xO-00z">
+                            <connections>
+                                <segue destination="xlQ-OP-ilh" kind="push" id="5uy-pB-qLP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lblText" destination="pKh-Gj-ihh" id="NxR-bw-Mf2"/>
                     </connections>
@@ -72,19 +87,37 @@
             </objects>
             <point key="canvasLocation" x="1653.8461538461538" y="-28.436018957345969"/>
         </scene>
-        <!--View Controller-->
+        <!--Third View-->
         <scene sceneID="BjD-Ac-8a4">
             <objects>
                 <viewController id="xlQ-OP-ilh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p3x-UL-Bps">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HT-16-4Yg">
+                                <rect key="frame" x="107.66666666666669" y="400" width="175" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back to Home">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Hc3-li-SrF" kind="unwind" unwindAction="backToHomeViewWithSegue:" id="tzm-ga-OeR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Wei-bY-by3"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="2HT-16-4Yg" firstAttribute="centerX" secondItem="p3x-UL-Bps" secondAttribute="centerX" id="Ksf-RO-8vw"/>
+                            <constraint firstItem="2HT-16-4Yg" firstAttribute="centerY" secondItem="p3x-UL-Bps" secondAttribute="centerY" id="peO-TZ-GPX"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="52T-Tg-Ky5"/>
+                    <navigationItem key="navigationItem" title="Third View" id="52T-Tg-Ky5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O33-im-46h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Hc3-li-SrF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2457" y="-18"/>
         </scene>

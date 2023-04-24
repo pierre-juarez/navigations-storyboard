@@ -20,4 +20,7 @@ class DetailViewController: UIViewController {
         lblText.text = saludo
     }
 
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
